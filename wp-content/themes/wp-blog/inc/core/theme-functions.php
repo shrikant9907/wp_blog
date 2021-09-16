@@ -68,3 +68,54 @@ function wb_theme_scripts() {
      
 } 
 add_action( 'wp_enqueue_scripts', 'wb_theme_scripts');  
+
+
+/* 
+* Insert Default Pages For Blog
+*/
+add_action('init', 'insertDefaultPages');
+function insertDefaultPages() {
+
+    $pages = array (
+        'Landing',
+        'About Us',
+        'Blog',
+        'Contact Us',
+        'Sitemap',
+        'Privacy Policy',
+        'Terms and conditions',
+       );
+    if ($pages) {
+  
+      update_option('show_on_front', 'page'); 
+  
+      foreach($pages as $page) {
+          $pageData = get_page_by_title( $page );
+          if (!$pageData) {
+  
+            // Create new page
+            $my_post = array(
+              'post_title'    => wp_strip_all_tags( $page ),
+              'post_content'  => '',
+              'post_status'   => 'publish',
+              'post_type'     => 'page',
+            );
+             
+            // Insert page in Database
+            wp_insert_post( $my_post );
+  
+          } else {
+  
+            // Front Page / Landing Page
+            if ($page == 'Landing') {
+              update_option('page_on_front', $pageData->ID);   
+            }
+  
+            // Blog Page
+            if ($page == 'Blog') {
+              update_option('page_for_posts', $pageData->ID ); 
+            }
+          }
+      }
+    }
+  }

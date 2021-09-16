@@ -81,6 +81,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			} else {
 				$class_names = $value = '';
 				$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+				$classes[] = 'nav-item';
 				$classes[] = 'menu-item-' . $item->ID;
 				$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 				if ( $args->has_children ) {
@@ -105,9 +106,10 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				if ( $args->has_children && 0 === $depth ) {
 					$atts['href']   		= '#';
 					$atts['data-toggle']	= 'dropdown';
-					$atts['class']			= 'dropdown-toggle';
+					$atts['class']			= 'dropdown-toggle nav-link';
 					$atts['aria-haspopup']	= 'true';
 				} else {
+					$atts['class'] = 'nav-link';
 					$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 				}
 				$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
@@ -210,7 +212,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				if ( $menu_class ) {
 					echo ' class="' . esc_attr( $menu_class ) . '"'; }
 				echo '>';
-				echo '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_attr( 'Add a menu', '' ) . '</a></li>';
+				echo '<li class="nav-item"><a class="nav-link" href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_attr( 'Add a menu', '' ) . '</a></li>';
 				echo '</ul>';
 				if ( $container ) {
 					echo '</' . esc_attr( $container ) . '>'; }
