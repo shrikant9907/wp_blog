@@ -20,7 +20,7 @@ function wb_register_sidebars() {
       'name'          => __( 'Right Sidebar', 'wp-blog' ),
       'description'   => 'It will display on the right side of blog listing and blog details page.',
       'id'            => 'right-sidebar',
-      'before_widget' => '<div id="%1$s" class="card cui2 wb-card %2$s"><div class="cbody">',
+      'before_widget' => '<div id="%1$s" class="card cui2 w-100 typography wb-card %2$s"><div class="card-body">',
       'after_widget'  => '</div></div>',
       'before_title'  => '<h3 class="card-header wb-chead">',
       'after_title'   => '</h3>',
@@ -150,12 +150,12 @@ function wb_pagination() {
   ) );
   if( is_array($page_format) ) {
               $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
-              echo '<div class="custom_paginations"><ul>';
+              echo '<ul class="pagination-ui">';
               echo '<li><span>'. $paged . ' of ' . $wp_query->max_num_pages .'</span></li>';
               foreach ( $page_format as $page ) {
                       echo "<li>$page</li>";
               }
-             echo '</ul></div>';
+             echo '</ul>';
   }
 }
   
