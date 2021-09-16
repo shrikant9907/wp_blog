@@ -14,9 +14,9 @@
                 <div class="card-body pri_30 pri_30 pli_30 pbi_30">
                     <h2 class='text-primary'><a class="text-primary tdn d-block" href="<?php the_permalink(); ?>" ><?php the_title(); ?></a></h2>
                     <?php if(has_post_thumbnail()) { ?>
-                      <a href="<?php the_permalink(); ?>" class="d-inline-block w-100 border"><img class="card-img-top r_0 mb_15" src="<?php echo  $image; ?>" alt="<?php the_title(); ?>" /></a>
+                      <a href="<?php the_permalink(); ?>" class="d-inline-block w-100 border  mb_20"><img class="card-img-top r_0" src="<?php echo  $image; ?>" alt="<?php the_title(); ?>" /></a>
                     <?php } else { ?>
-                      <a href="<?php the_permalink(); ?>" class="d-inline-block w-100 border"><img class="card-img-top r_0 mb_15" src="<?php echo $image; ?>" alt=""></a>
+                      <a href="<?php the_permalink(); ?>" class="d-inline-block w-100 border mb_20"><img class="card-img-top r_0" src="<?php echo get_stylesheet_directory_uri(); ?>/images/placeholder_500x300.jpg" alt=""></a>
                     <?php } ?>
                     <div class="text-dark px_5 py_5 mb_10 f14 d-flex justify-content-between">
                         <span><i class="fa fa-user mr_5 text-primary" aria-hidden="true"></i> <?php the_author(); ?></span>
@@ -27,7 +27,7 @@
                         $output = '';
                         if ( ! empty( $categories ) ) {
                             foreach( $categories as $category ) {
-                                $output .= '<a class="text-dark" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'mycourse' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+                                $output .= '<a class="text-dark" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'wp-blog' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
                             }
                             echo trim( $output, $separator );
                         }
@@ -37,7 +37,7 @@
                     </div>
                     <div class="f16">
                     <p><?php echo wp_trim_words(get_the_content(), 30); ?></p>
-                    <a href="<?php the_permalink(); ?>" class="btn btn-primary btnui3s w-100 text-white text_bold">Continue Reading <i class="ml_5 fas fa-angle-double-right"></i></a>
+                    <a href="<?php the_permalink(); ?>" class="btn btn-primary btnui3s text-white">Continue Reading <i class="ml_5 fas fa-angle-double-right"></i></a>
                     </div>
                 </div>
               </div>                        
