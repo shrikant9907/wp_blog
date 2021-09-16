@@ -20,8 +20,8 @@ function wb_register_sidebars() {
       'name'          => __( 'Right Sidebar', 'wp-blog' ),
       'description'   => 'It will display on the right side of blog listing and blog details page.',
       'id'            => 'right-sidebar',
-      'before_widget' => '<div id="%1$s" class="card wb-card %2$s">',
-      'after_widget'  => '</div>',
+      'before_widget' => '<div id="%1$s" class="card cui2 wb-card %2$s"><div class="cbody">',
+      'after_widget'  => '</div></div>',
       'before_title'  => '<h3 class="card-header wb-chead">',
       'after_title'   => '</h3>',
     ));   
@@ -108,12 +108,12 @@ function insertDefaultPages() {
   
             // Front Page / Landing Page
             if ($page == 'Landing') {
-              update_option('page_on_front', $pageData->ID);   
+              // update_option('page_on_front', $pageData->ID);   
             }
   
             // Blog Page
             if ($page == 'Blog') {
-              update_option('page_for_posts', $pageData->ID ); 
+              // update_option('page_for_posts', $pageData->ID ); 
             }
           }
       }
