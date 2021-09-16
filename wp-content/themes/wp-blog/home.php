@@ -4,9 +4,22 @@
 */ 
 get_header();
 ?> 
+<!-- Page Heading Section -->
+<section class="common-section-ui heading-bg py_50 bg-dark flex center_center d-flex">
+  <h1 class="text-white text-uppercase">Blog</h1>
+</section>
+<!-- Page Heading Section End -->
 
-<div class="single-page bg-light common-section-ui pt_0">
-  <h1 class="text-center bg-primary mb-5 text-white ptb_40 mont_serrat f30 lh22"><?php _e('Blog'); ?></h1>
+<!-- Breadcrumb Start -->
+<section class="common-section-ui page-breadcrumb bg-light pti_20 pbi_20">
+  <div class="container">
+    <p class="text-muted f14 m-0"><a href="<?php echo site_url('/'); ?>" class="text-muted">Home</a> / About Us</p>
+  </div>
+</section>
+<!-- Breadcrum End -->
+
+<!-- Blog Page Content Start -->
+<div class="blog-page common-section-ui">
   <div class="container">
     <div class="row">
       <div class="col-12 col-sm-6 col-md-8">
@@ -63,5 +76,6 @@ get_header();
     </div>
   </div>
 </div>
+<!-- Blog Page Content End -->
  
 <?php get_footer(); 

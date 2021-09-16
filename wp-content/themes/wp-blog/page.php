@@ -1,6 +1,20 @@
 <?php get_header(); ?> 
-<h1 class="text-center bg-primary mb-5 text-white ptb_40 mont_serrat f30 lh32"><?php the_title(); ?></h1>
-<section class="page-section bg-light common-section-ui">
+
+<!-- Page Heading Section -->
+<section class="common-section-ui heading-bg py_50 bg-dark flex center_center d-flex">
+  <h1 class="text-white text-uppercase"><?php the_title(); ?></h1>
+</section>
+<!-- Page Heading Section End -->
+
+<!-- Breadcrumb Start -->
+<section class="common-section-ui page-breadcrumb bg-light pti_20 pbi_20">
+  <div class="container">
+    <p class="text-muted f14 m-0"><a href="<?php echo site_url('/'); ?>" class="text-muted">Home</a> / <?php the_title(); ?></p>
+  </div>
+</section>
+<!-- Breadcrum End -->
+
+<section class="page-section common-section-ui">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">

@@ -3,13 +3,37 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-12 col-sm-6 col-md-4 pl_60">
-							<?php dynamic_sidebar('footer-col1'); ?>
+						<?php 
+							if ( is_active_sidebar( 'footer-col1' ) ) : 
+								dynamic_sidebar( 'footer-col1' );	
+							else:
+								if (is_user_logged_in()) {
+									echo '<a class="tdn text-white" target="_blank" href="'.admin_url('/widgets.php').'">Add Widget</a>';
+								}
+							endif;
+						?>
 						</div>
 						<div class="col-12 col-sm-6 col-md-4">
-							<?php dynamic_sidebar('footer-col2'); ?>
+							<?php 
+								if ( is_active_sidebar( 'footer-col2' ) ) : 
+									dynamic_sidebar( 'footer-col2' );	
+								else:
+									if (is_user_logged_in()) {
+										echo '<a class="tdn text-white" target="_blank" href="'.admin_url('/widgets.php').'">Add Widget</a>';
+									}
+								endif;
+							?>
 						</div>
 						<div class="col-12 col-sm-6 col-md-4 pl_50">
-							<?php dynamic_sidebar('footer-col3'); ?>
+							<?php 
+								if ( is_active_sidebar( 'footer-col3' ) ) : 
+									dynamic_sidebar( 'footer-col3' );	
+								else:
+									if (is_user_logged_in()) {
+										echo '<a class="tdn text-white" target="_blank" href="'.admin_url('/widgets.php').'">Add Widget</a>';
+									}
+								endif; 
+							?>
 						</div>
 					</div>
 				</div>
