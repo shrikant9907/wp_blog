@@ -25,6 +25,33 @@ function wb_register_sidebars() {
       'before_title'  => '<h3 class="card-header wb-chead">',
       'after_title'   => '</h3>',
     ));   
+    register_sidebar( array(
+      'name'          => __( 'Footer Column 1', 'wp-blog' ),
+      'description'   => 'It will display left in the footer..',
+      'id'            => 'footer-col1',
+      'before_widget' => '<div id="%1$s" class="typography footer-card %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3 class="fheading">',
+      'after_title'   => '</h3>',
+    ));
+    register_sidebar( array(
+      'name'          => __( 'Footer Column 2', 'wp-blog' ),
+      'description'   => 'It will display center in the footer..',
+      'id'            => 'footer-col2',
+      'before_widget' => '<div id="%1$s" class="typography footer-card %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3 class="fheading">',
+      'after_title'   => '</h3>',
+    ));
+    register_sidebar( array(
+      'name'          => __( 'Footer Column 1', 'wp-blog' ),
+      'description'   => 'It will display right in the footer..',
+      'id'            => 'footer-col3',
+      'before_widget' => '<div id="%1$s" class="typography footer-card %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3 class="fheading">',
+      'after_title'   => '</h3>',
+    ));   
   }  
 add_action( 'widgets_init', 'wb_register_sidebars',10, 0 ); 
   

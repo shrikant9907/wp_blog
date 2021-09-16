@@ -5,6 +5,7 @@
             <div class="container">
                 <div class="row">
                   <div class="col-12 col-sm-6 col-md-4 pl_60">
+                       <?php dynamic_sidebar('footer-col1'); ?>
                        <h3 class="text-secondary f18 lh22 mb_20 text-uppercase">Social</h3>
                        <ul class="menu">
                           <li><a href="#">Neque atque magnam.</a></li>
@@ -16,10 +17,13 @@
                         </ul>
                   </div>
                    <div class="col-12 col-sm-6 col-md-4">
+                      <?php dynamic_sidebar('footer-col2'); ?>
                       <p><img class="footer_logo" src="https://picsum.photos/id/475/300/100" alt="" /></p>
                       <p>Our website is specially designed for the beginner. Who's looking for some good program from basic to advanced.</p>
                   </div>
                   <div class="col-12 col-sm-6 col-md-4 pl_50">
+                    <?php dynamic_sidebar('footer-col3'); ?>
+                     
                   <h3 class="text-secondary f18 lh22 mb_20 text-uppercase">Posts</h3>
                       <ul class="menu">
                         <li><a href="#">Neque atque magnam.</a></li>
