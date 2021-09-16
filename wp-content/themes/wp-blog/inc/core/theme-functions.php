@@ -91,6 +91,7 @@ function wb_theme_scripts() {
     wp_enqueue_script('jquery'); 
     wp_enqueue_script( 'fontawesome-script', $stylediruri.'/js/all.min.js', array( 'jquery'), false );
     wp_enqueue_script( 'bootstrap-script', $stylediruri.'/js/bootstrap.min.js', array( 'jquery'), false );
+    wp_enqueue_script( 'slick-script', $stylediruri.'/js/slick.min.js', array( 'jquery'), false );
     wp_enqueue_script( 'custom-script', $stylediruri.'/js/custom.js', array( 'jquery'), $version ,true );
      
 } 

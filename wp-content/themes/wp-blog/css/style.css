@@ -1,0 +1,96 @@
+.btn-primary {
+  background-color: #4B3F72 !important;
+  border-color: #4B3F72 !important;
+}
+
+.btn-primary:hover {
+  background-color: #1F2041 !important;
+  border-color: #1F2041 !important;
+}
+
+.text-primary {
+  color: #4B3F72 !important;
+}
+
+a {
+  color: #4B3F72;
+}
+
+.bg-dark {
+  background-color: #1F2041 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #4B3F72;
+  font-family: "Lato";
+}
+
+.wb-card .card-body,
+.widget_block .card-body {
+  padding: 15px 20px !important;
+}
+.wb-card h2,
+.widget_block h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 11px;
+}
+.wb-card .wp-block-search .wp-block-search__button,
+.widget_block .wp-block-search .wp-block-search__button {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  width: auto;
+  line-height: 1;
+  background-color: #4B3F72 !important;
+  border-color: #4B3F72 !important;
+  border-radius: 50px !important;
+  color: #ffffff;
+}
+.wb-card .wp-block-search .wp-block-search__input,
+.widget_block .wp-block-search .wp-block-search__input {
+  flex-grow: 1;
+  min-width: 3em;
+  border: 1px solid #efefef;
+  width: 100%;
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.wb-card ol,
+.wb-card ul,
+.widget_block ol,
+.widget_block ul {
+  list-style: none;
+  padding-left: 0;
+}
+.wb-card ol li,
+.wb-card ul li,
+.widget_block ol li,
+.widget_block ul li {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-top: 1px dashed #efefef;
+}
+.wb-card ol li a,
+.wb-card ul li a,
+.widget_block ol li a,
+.widget_block ul li a {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
