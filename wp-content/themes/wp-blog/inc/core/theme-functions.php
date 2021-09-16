@@ -119,3 +119,17 @@ function insertDefaultPages() {
       }
     }
   }
+
+
+/*
+* Insert Post Slug in body classes
+*/
+function add_post_slug_body_class( $classes ) {
+  global $post;
+  if ( isset( $post ) ) {
+      $page_slug = $post->post_name;    
+      $classes[] = 'post-'.$page_slug;
+  }
+  return $classes;
+}
+add_filter( 'body_class', 'add_post_slug_body_class' );
