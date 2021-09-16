@@ -26,5 +26,29 @@ function wb_register_sidebars() {
       'after_title'   => '</h3>',
     ));   
   }  
-add_action( 'widgets_init', 'wp_blog_register_sidebars',10, 0 ); 
+add_action( 'widgets_init', 'wb_register_sidebars',10, 0 ); 
   
+/*
+* Add Themes Stylesheets
+*/
+function wb_theme_styles() {
+    $version = date('timestamp');
+    $stylediruri = get_stylesheet_directory_uri();
+    
+    ?>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <?php 
+    wp_enqueue_style( 'lato-fonts', 'https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap', array(), false);
+    wp_enqueue_style( 'opensans-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap', array(), false);
+    
+    // Theme Stylesheets
+    wp_enqueue_style( 'fontawesome-css', $stylediruri.'/css/all.min.css', array(), false);
+    wp_enqueue_style( 'bootstrap-css', $stylediruri.'/css/bootstrap.min.css', array(), false);
+    wp_enqueue_style( 'components-css', $stylediruri.'/css/components.css', array(), false);
+    wp_enqueue_style( 'utils-css', $stylediruri.'/css/utils.css', array(), false);
+    wp_enqueue_style( 'style-css', $stylediruri.'/css/style.css', array(), $version);
+    wp_enqueue_style( 'responsive-css', $stylediruri.'/css/responsive.css', array(), $version );
+} 
+add_action( 'wp_head', 'wb_theme_styles' , 1 );  
