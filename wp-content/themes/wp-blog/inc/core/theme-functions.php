@@ -133,3 +133,29 @@ function add_post_slug_body_class( $classes ) {
   return $classes;
 }
 add_filter( 'body_class', 'add_post_slug_body_class' );
+
+
+/*
+ * Add Pagination for blog posts
+ */
+function wb_pagination() {
+  global $wp_query;
+  $big = 999999999999;
+  $page_format = paginate_links( array(
+      'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+      'format' => '?paged=%#%',
+      'current' => max( 1, get_query_var('paged') ),
+      'total' => $wp_query->max_num_pages,
+      'type'  => 'array'
+  ) );
+  if( is_array($page_format) ) {
+              $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
+              echo '<div class="custom_paginations"><ul>';
+              echo '<li><span>'. $paged . ' of ' . $wp_query->max_num_pages .'</span></li>';
+              foreach ( $page_format as $page ) {
+                      echo "<li>$page</li>";
+              }
+             echo '</ul></div>';
+  }
+}
+  

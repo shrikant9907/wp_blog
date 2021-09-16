@@ -26,7 +26,11 @@
 </head>
 
 <body <?php body_class(); ?>> 
+<?php 
 
+$logoSrc = '';
+
+?>
 
 <!-- Header Start -->
 <header id="main_header" class="header border-bottom">
